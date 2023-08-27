@@ -17,7 +17,7 @@ Upon the Linux landscape, the sanctum of NeoVim configuration rests within
 direct transplant awaits—a swift cloning of its essence:
 
 ```shell
-git clone <repo> ~/.config/nvim
+git clone https://github.com/EHER/nuVim.git ~/.config/nvim
 ```
 
 Should you possess a prior configuration, a rebirth is in order; a mere
