@@ -1,6 +1,28 @@
 # 🗡️  nuVim
 Personal Neovim config tailored for productive PHP coding
 
+## Main keys
+
+The leader key is <kbd>space</kbd>
+
+ - <kbd>space</kbd> <kbd>-</kbd> open left panel with files on the same path as the current file
+ - <kbd>space</kbd> <kbd>/</kbd> search in files for the word under the cursor
+ - <kbd>space</kbd> <kbd>k</kbd> open search result on the botton panel  
+ - <kbd>space</kbd> <kbd>a</kbd> give code options based on the cursor position 
+ - <kbd>space</kbd> <kbd>b</kbd> open buffer selection window 
+ - <kbd>space</kbd> <kbd>c</kbd> open command selection window 
+ - <kbd>space</kbd> <kbd>d</kbd> go to the definition of the element under the cursor 
+ - <kbd>space</kbd> <kbd>g</kbd> open window to select a file tracked on git 
+ - <kbd>space</kbd> <kbd>h</kbd> display information about what is under the cursor 
+ - <kbd>space</kbd> <kbd>i</kbd> look up for implementations of the element under the cursor
+ - <kbd>space</kbd> <kbd>l</kbd> apply code style fix 
+ - <kbd>space</kbd> <kbd>n</kbd> open left panel with files on the root of the project 
+ - <kbd>space</kbd> <kbd>o</kbd> keep just the current file visible 
+ - <kbd>space</kbd> <kbd>r</kbd> rename the element under the cursor 
+ - <kbd>space</kbd> <kbd>s</kbd> open git status on the top panel 
+ - <kbd>space</kbd> <kbd>y</kbd> go to the definition of the type under the cursor 
+
+
 ## Unveiling the Configuration Chronicles
 To embark on this voyage, you must first ensure the presence of Neovim on your
 digital shores (an evident necessity!). As the stars above beckon, it is
