@@ -5,6 +5,7 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
   Plug 'morhetz/gruvbox'
   Plug 'preservim/nerdtree'
+  Plug 'psliwka/vim-smoothie'
   Plug 'tpope/vim-fugitive'
 call plug#end()
 
