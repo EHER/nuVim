@@ -30,3 +30,8 @@ nmap <leader>r :ALERename<cr>
 nmap <leader>s :Git<cr>
 nmap <leader>y :ALEGoToTypeDefinition<cr>
 set clipboard+=unnamedplus grepprg=ag mouse=a number 
+
+autocmd FileType graphql setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType json setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType php setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
