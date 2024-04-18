@@ -11,6 +11,7 @@ call plug#begin()
   Plug 'folke/which-key.nvim'
   Plug 'echasnovski/mini.nvim'
   Plug 'max397574/better-escape.nvim'
+  Plug 'github/copilot.vim'
 call plug#end()
 
 lua require("better_escape").setup()
