@@ -5,23 +5,33 @@ Personal Neovim config tailored for productive PHP coding
 
 The leader key is <kbd>space</kbd>
 
- - <kbd>space</kbd> <kbd>-</kbd> open left panel with files on the same path as the current file
- - <kbd>space</kbd> <kbd>/</kbd> search in files for the word under the cursor
- - <kbd>space</kbd> <kbd>k</kbd> open search result on the botton panel  
- - <kbd>space</kbd> <kbd>a</kbd> give code options based on the cursor position 
- - <kbd>space</kbd> <kbd>b</kbd> open buffer selection window 
- - <kbd>space</kbd> <kbd>c</kbd> open command selection window 
- - <kbd>space</kbd> <kbd>d</kbd> go to the definition of the element under the cursor 
- - <kbd>space</kbd> <kbd>g</kbd> open window to select a file tracked on git 
- - <kbd>space</kbd> <kbd>h</kbd> display information about what is under the cursor 
- - <kbd>space</kbd> <kbd>i</kbd> look up for implementations of the element under the cursor
- - <kbd>space</kbd> <kbd>l</kbd> apply code style fix 
- - <kbd>space</kbd> <kbd>n</kbd> open left panel with files on the root of the project 
- - <kbd>space</kbd> <kbd>o</kbd> keep just the current file visible 
- - <kbd>space</kbd> <kbd>r</kbd> rename the element under the cursor 
- - <kbd>space</kbd> <kbd>s</kbd> open git status on the top panel 
- - <kbd>space</kbd> <kbd>y</kbd> go to the definition of the type under the cursor 
-
+ - <kbd>g</kbd> <kbd>I</kbd> look up for implementations of the element under the cursor
+ - <kbd>g</kbd> <kbd>Y</kbd> go to the definition of the element under the cursor
+ - <kbd>g</kbd> <kbd>y</kbd> go to the definition of the symbol under the cursor
+ - <kbd>space</kbd> <kbd>/</kbd> comment/uncomment the current line
+ - <kbd>space</kbd> <kbd>O</kbd> keep just the current file visible
+ - <kbd>space</kbd> <kbd>Q</kbd> force quit the editor
+ - <kbd>space</kbd> <kbd>W</kbd> save all buffers
+ - <kbd>space</kbd> <kbd>c</kbd> close current buffer
+ - <kbd>space</kbd> <kbd>e</kbd> open left panel with files on the root of the project
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>C</kbd> open command selection window
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>O</kbd> open search result on the botton panel
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>b</kbd> open buffer selection window
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>c</kbd> search in files for the word under the cursor
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>f</kbd> find files by name
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>g</kbd> find files tracked on git by name
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> open git status on the top panel
+ - <kbd>space</kbd> <kbd>l</kbd> <kbd>a</kbd> give code options based on the cursor position
+ - <kbd>space</kbd> <kbd>l</kbd> <kbd>f</kbd> apply code style fix
+ - <kbd>space</kbd> <kbd>l</kbd> <kbd>h</kbd> display information about what is under the cursor
+ - <kbd>space</kbd> <kbd>l</kbd> <kbd>r</kbd> rename the element under the cursor
+ - <kbd>space</kbd> <kbd>o</kbd> open left panel with files on the same path as the current file
+ - <kbd>space</kbd> <kbd>p</kbd> <kbd>c</kbd> remove plugins pending removal
+ - <kbd>space</kbd> <kbd>p</kbd> <kbd>i</kbd> install plugins pending installation
+ - <kbd>space</kbd> <kbd>p</kbd> <kbd>s</kbd> display the status of plugins
+ - <kbd>space</kbd> <kbd>q</kbd> quit the editor
+ - <kbd>space</kbd> <kbd>u</kbd> <kbd>e</kbd> open the main settings file
+ - <kbd>space</kbd> <kbd>w</kbd> save the current buffer
 
 ## Unveiling the Configuration Chronicles
 To embark on this voyage, you must first ensure the presence of Neovim on your
@@ -46,7 +56,7 @@ Should you possess a prior configuration, a rebirth is in order; a mere
 renaming shall grant it a new identity:
 
 ```shell
-mv ~/.config/nvim ~/.config/nvim.old
+mv ~/.config/nvim ~/.config/nvim.bak
 ```
 
 Yet, if the yearning is to merely partake in the symphony, to pick and choose
