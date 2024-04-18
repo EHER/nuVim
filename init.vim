@@ -45,7 +45,7 @@ nmap <leader>lf :ALEFix<cr>
 nmap <leader>lh :ALEHover<cr>
 nmap <leader>lr :ALERename<cr>
 nmap <leader>o :Neotree focus reveal toggle<cr>
-nmap <leader>pc :PlugClean<cr>
+nmap <leader>px :PlugClean<cr>
 nmap <leader>pi :PlugInstall --sync<cr>
 nmap <leader>ps :PlugStatus<cr>
 nmap <leader>q :quit<cr>
