@@ -2,9 +2,9 @@ local path_package = vim.fn.stdpath('data') .. '/site'
 
 local mini_path = path_package .. '/pack/deps/start/mini.nvim'
 if not vim.loop.fs_stat(mini_path) then
-	vim.cmd('echo "Installing `mini.nvim`" | redraw')
-	vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/echasnovski/mini.nvim', mini_path })
-	vim.cmd('packadd mini.nvim | helptags ALL')
+    vim.cmd('echo "Installing `mini.nvim`" | redraw')
+    vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/echasnovski/mini.nvim', mini_path })
+    vim.cmd('packadd mini.nvim | helptags ALL')
 end
 
 require('mini.deps').setup({ path = { package = path_package } })
@@ -37,10 +37,15 @@ require("lspconfig").lua_ls.setup {}
 require("lspconfig").phpactor.setup {}
 require('mason-lspconfig').setup { ensure_installed = { "lua_ls", "phpactor" } }
 
+local minifiles_toggle = function(...) if not require('mini.files').close() then require('mini.files').open(...) end end
+local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_name(0)) end
+
 vim.cmd('colorscheme gruvbox')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<Leader>c', ':bdelete<CR>', { desc = 'Close the current buffer' })
-vim.keymap.set('n', '<Leader>e', function(...) if not require('mini.files').close() then require('mini.files').open() end end, { desc = 'Toggle the file explorer' }) vim.keymap.set('n', '<Leader>fb', ':Pick buffers<CR>', { desc = 'Find buffers' })
+vim.keymap.set('n', '<Leader>e', minifiles_toggle, { desc = 'Toggle the file explorer' })
+vim.keymap.set('n', '<Leader>bh', ':only<CR>', { desc = 'Hide other buffers' })
+vim.keymap.set('n', '<Leader>fb', ':Pick buffers<CR>', { desc = 'Find buffers' })
 vim.keymap.set('n', '<Leader>fC', ':Pick commands<CR>', { desc = 'Find commands' })
 vim.keymap.set('n', '<Leader>fH', ':Pick help<CR>', { desc = 'Find help' })
 vim.keymap.set('n', '<Leader>fc', ':Pick grep <c-r><c-w><CR>', { desc = 'Find word under the cursor' })
@@ -62,7 +67,7 @@ vim.keymap.set('n', '<Leader>ld', vim.lsp.buf.type_definition, { desc = 'Go to t
 vim.keymap.set('n', '<Leader>lf', function() vim.lsp.buf.format { async = true } end, { desc = 'Format code' })
 vim.keymap.set('n', '<Leader>lk', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
 vim.keymap.set('n', '<Leader>lr', vim.lsp.buf.rename, { desc = 'Rename' })
-vim.keymap.set('n', '<Leader>o', require('mini.files').open, { desc = 'Open the file explorer' })
+vim.keymap.set('n', '<Leader>o', minifiles_toggle_cwd, { desc = 'Open the file explorer' })
 vim.keymap.set('n', '<Leader>pM', ':MasonUpdate<CR>', { desc = 'Update Mason plugins' })
 vim.keymap.set('n', '<Leader>pm', ':Mason<CR>', { desc = 'Manage Mason plugins' })
 vim.keymap.set('n', '<Leader>pu', require("mini.deps").update, { desc = 'Update plugins' })
@@ -72,6 +77,7 @@ vim.keymap.set('n', '<Leader>ue', ':edit $MYVIMRC<CR>', { desc = 'Open the user 
 vim.keymap.set('n', '<Leader>uo', ':source $MYVIMRC<CR>', { desc = 'Source the user configuration file' })
 vim.keymap.set('n', '<Leader>v', 'gcc', { desc = 'Toggle comment' })
 vim.keymap.set('n', '<Leader>w', ':write<CR>', { desc = 'Write the current buffer (save)' })
+vim.keymap.set('n', '<Leader>W', ':wall<CR>', { desc = 'Write all buffers (save all)' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show hover information' })
 vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
@@ -79,4 +85,8 @@ vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, { desc = 'Go to implementa
 vim.keymap.set('n', 'gY', vim.lsp.buf.declaration, { desc = 'Go to type declaration' })
 vim.keymap.set('n', 'gy', vim.lsp.buf.definition, { desc = 'Go to type definition' })
 vim.keymap.set({ 'n', 'v' }, '<Leader>la', vim.lsp.buf.code_action, { desc = 'Code actions' })
+vim.o.hidden = true
 vim.opt.relativenumber = true
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '<Leader>ll', vim.diagnostic.setloclist, { desc = 'Show diagnostics' })

@@ -11,6 +11,8 @@ The leader key is <kbd>space</kbd>
  - <kbd>g</kbd> <kbd>I</kbd> Go to implementation
  - <kbd>g</kbd> <kbd>Y</kbd> Go to type declaration
  - <kbd>g</kbd> <kbd>y</kbd> Go to type definition
+ - <kbd>space</kbd> <kbd>W</kbd> Write all buffers (save all)
+ - <kbd>space</kbd> <kbd>b</kbd> <kbd>h</kbd> Hide other buffers
  - <kbd>space</kbd> <kbd>c</kbd> Close the current buffer
  - <kbd>space</kbd> <kbd>e</kbd> Toggle the file explorer
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>C</kbd> Find commands
