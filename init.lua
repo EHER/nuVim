@@ -13,10 +13,10 @@ local add = require('mini.deps').add
 add('folke/which-key.nvim')
 add('github/copilot.vim')
 add('max397574/better-escape.nvim')
-add('morhetz/gruvbox')
 add('neovim/nvim-lspconfig')
 add('williamboman/mason-lspconfig.nvim')
 add('williamboman/mason.nvim')
+add('ellisonleao/gruvbox.nvim')
 
 require('better_escape').setup()
 require('lspconfig').lua_ls.setup {}
