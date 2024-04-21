@@ -18,9 +18,12 @@ add('neovim/nvim-lspconfig')
 add('williamboman/mason-lspconfig.nvim')
 add('williamboman/mason.nvim')
 
-require("mason").setup()
-require("mason-lspconfig").setup()
 require('better_escape').setup()
+require('lspconfig').lua_ls.setup {}
+require('lspconfig').phpactor.setup {}
+require('mason').setup()
+require('mason-lspconfig').setup()
+require('mason-lspconfig').setup({ ensure_installed = { "lua_ls", "phpactor" } })
 require('mini.basics').setup()
 require('mini.comment').setup()
 require('mini.completion').setup()
@@ -35,9 +38,6 @@ require('mini.surround').setup()
 require('mini.tabline').setup()
 require('mini.visits').setup()
 require('which-key').setup()
-require("lspconfig").lua_ls.setup {}
-require("lspconfig").phpactor.setup {}
-require('mason-lspconfig').setup { ensure_installed = { "lua_ls", "phpactor" } }
 
 local minifiles_toggle = function(...) if not require('mini.files').close() then require('mini.files').open(...) end end
 local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_name(0)) end
@@ -57,7 +57,7 @@ vim.keymap.set('n', '<Leader>fg', ':Pick git_files<CR>', { desc = 'Find git file
 vim.keymap.set('n', '<Leader>fh', ':Pick history<CR>', { desc = 'Find history' })
 vim.keymap.set('n', '<Leader>fl', ':Pick buf_lines<CR>', { desc = 'Find lines' })
 vim.keymap.set('n', '<Leader>fo', ':Pick visit_paths<CR>', { desc = 'Find visited paths' })
-vim.keymap.set('n', '<Leader>fs', ":Pick lsp scope='document_symbol'<CR>", { desc = 'Find LSP symbols in the current file' })
+vim.keymap.set('n', '<Leader>fs', ":Pick lsp scope='document_symbol'<CR>", { desc = 'Find LSP symbols' })
 vim.keymap.set('n', '<Leader>fw', ':Pick grep_live<CR>', { desc = 'Find word' })
 vim.keymap.set('n', '<Leader>gb', ':Pick git_branches<CR>', { desc = 'Git branches' })
 vim.keymap.set('n', '<Leader>gc', ':Pick git_commits<CR>', { desc = 'Git commits' })
