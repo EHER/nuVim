@@ -5,33 +5,35 @@ Personal Neovim config tailored for productive PHP coding
 
 The leader key is <kbd>space</kbd>
 
- - <kbd>g</kbd> <kbd>I</kbd> look up for implementations of the element under the cursor
- - <kbd>g</kbd> <kbd>Y</kbd> go to the definition of the element under the cursor
- - <kbd>g</kbd> <kbd>y</kbd> go to the definition of the symbol under the cursor
- - <kbd>space</kbd> <kbd>/</kbd> comment/uncomment the current line
- - <kbd>space</kbd> <kbd>O</kbd> keep just the current file visible
- - <kbd>space</kbd> <kbd>Q</kbd> force quit the editor
- - <kbd>space</kbd> <kbd>W</kbd> save all buffers
- - <kbd>space</kbd> <kbd>c</kbd> close current buffer
- - <kbd>space</kbd> <kbd>e</kbd> open left panel with files on the root of the project
- - <kbd>space</kbd> <kbd>f</kbd> <kbd>C</kbd> open command selection window
- - <kbd>space</kbd> <kbd>f</kbd> <kbd>O</kbd> open search result on the botton panel
- - <kbd>space</kbd> <kbd>f</kbd> <kbd>b</kbd> open buffer selection window
- - <kbd>space</kbd> <kbd>f</kbd> <kbd>c</kbd> search in files for the word under the cursor
- - <kbd>space</kbd> <kbd>f</kbd> <kbd>f</kbd> find files by name
- - <kbd>space</kbd> <kbd>f</kbd> <kbd>g</kbd> find files tracked on git by name
- - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> open git status on the top panel
- - <kbd>space</kbd> <kbd>l</kbd> <kbd>a</kbd> give code options based on the cursor position
- - <kbd>space</kbd> <kbd>l</kbd> <kbd>f</kbd> apply code style fix
- - <kbd>space</kbd> <kbd>l</kbd> <kbd>h</kbd> display information about what is under the cursor
- - <kbd>space</kbd> <kbd>l</kbd> <kbd>r</kbd> rename the element under the cursor
- - <kbd>space</kbd> <kbd>o</kbd> open left panel with files on the same path as the current file
- - <kbd>space</kbd> <kbd>p</kbd> <kbd>c</kbd> remove plugins pending removal
- - <kbd>space</kbd> <kbd>p</kbd> <kbd>i</kbd> install plugins pending installation
- - <kbd>space</kbd> <kbd>p</kbd> <kbd>s</kbd> display the status of plugins
- - <kbd>space</kbd> <kbd>q</kbd> quit the editor
- - <kbd>space</kbd> <kbd>u</kbd> <kbd>e</kbd> open the main settings file
- - <kbd>space</kbd> <kbd>w</kbd> save the current buffer
+ - <kbd>space</kbd> <kbd>c</kbd> Close the current buffer
+ - <kbd>space</kbd> <kbd>e</kbd> Toggle the file explorer
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>b</kbd> Find buffers
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>C</kbd> Find commands
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>c</kbd> Find word under the cursor
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>e</kbd> Find files (explorer)
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>f</kbd> Find files
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>g</kbd> Find git files
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>h</kbd> Find history
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>H</kbd> Find help
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>l</kbd> Find buffer lines
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>o</kbd> Find visited paths
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>s</kbd> Find LSP symbols
+ - <kbd>space</kbd> <kbd>f</kbd> <kbd>w</kbd> Find word
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>b</kbd> Git branches
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>c</kbd> Git commits
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> Open lazygit
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>h</kbd> Git hunks
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>t</kbd> Open tig
+ - <kbd>space</kbd> <kbd>o</kbd> Open the file explorer
+ - <kbd>space</kbd> <kbd>p</kbd> <kbd>u</kbd> Update plugins
+ - <kbd>space</kbd> <kbd>p</kbd> <kbd>x</kbd> Clean plugins
+ - <kbd>space</kbd> <kbd>q</kbd> Quit
+ - <kbd>space</kbd> <kbd>u</kbd> <kbd>e</kbd> Open the user configuration file
+ - <kbd>space</kbd> <kbd>u</kbd> <kbd>o</kbd> Source the user configuration file
+ - <kbd>space</kbd> <kbd>v</kbd> Toggle comment
+ - <kbd>space</kbd> <kbd>w</kbd> Write the current buffer (save)
+ - <kbd>[</kbd> <kbd>b</kbd> Previous buffer
+ - <kbd>]</kbd> <kbd>b</kbd> Next buffer
 
 ## Unveiling the Configuration Chronicles
 To embark on this voyage, you must first ensure the presence of Neovim on your
