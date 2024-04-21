@@ -40,7 +40,7 @@ nmap <leader>fc :grep <c-r><c-w><cr>:copen<cr>
 nmap <leader>ff :Files<cr>
 nmap <leader>fg :GitFiles<cr>
 nmap <leader>gg :Git<cr>
-nmap <leader>la :wLECodeAction<cr>
+nmap <leader>la :ALECodeAction<cr>
 nmap <leader>lf :ALEFix<cr>
 nmap <leader>lh :ALEHover<cr>
 nmap <leader>lr :ALERename<cr>
