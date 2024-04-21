@@ -25,6 +25,8 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>h</kbd> Git hunks
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>t</kbd> Open tig
  - <kbd>space</kbd> <kbd>o</kbd> Open the file explorer
+ - <kbd>space</kbd> <kbd>p</kbd> <kbd>M</kbd> Update Mason plugins
+ - <kbd>space</kbd> <kbd>p</kbd> <kbd>m</kbd> Manage Mason plugins
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>u</kbd> Update plugins
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>x</kbd> Clean plugins
  - <kbd>space</kbd> <kbd>q</kbd> Quit
