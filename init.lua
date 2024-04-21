@@ -27,7 +27,6 @@ require('mason-lspconfig').setup({ ensure_installed = { "lua_ls", "phpactor" } }
 require('mini.basics').setup()
 require('mini.comment').setup()
 require('mini.completion').setup()
-require('mini.diff').setup()
 require('mini.extra').setup()
 require('mini.files').setup()
 require('mini.notify').setup()
