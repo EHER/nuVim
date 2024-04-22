@@ -60,19 +60,19 @@ For those whose journey includes the realm of PHP, a trusty companion by the
 name of 'phactor' shall join as the language-server, illuminating the path
 ahead.
 
+Should you possess a prior configuration, a rebirth is in order; a mere
+renaming shall grant it a new identity:
+
+```shell
+mv ~/.config/nvim ~/.config/nvim.bak
+```
+
 Upon the Linux landscape, the sanctum of NeoVim configuration rests within
 `~/.config/nvim`. For an exclusive embrace of this configuration's embrace, a
 direct transplant awaits—a swift cloning of its essence:
 
 ```shell
 git clone https://github.com/EHER/nuVim.git ~/.config/nvim
-```
-
-Should you possess a prior configuration, a rebirth is in order; a mere
-renaming shall grant it a new identity:
-
-```shell
-mv ~/.config/nvim ~/.config/nvim.bak
 ```
 
 Yet, if the yearning is to merely partake in the symphony, to pick and choose
