@@ -91,6 +91,7 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>c</kbd> Git commits
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> Open lazygit
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>h</kbd> Git hunks
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>p</kbd> Preview git hunk
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>t</kbd> Open tig
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>D</kbd> Document diagnostics
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>R</kbd> Show references
