@@ -10,15 +10,17 @@ end
 require('mini.deps').setup({ path = { package = path_package } })
 local add = require('mini.deps').add
 
+add('ellisonleao/gruvbox.nvim')
 add('folke/which-key.nvim')
 add('github/copilot.vim')
+add('lewis6991/gitsigns.nvim')
 add('max397574/better-escape.nvim')
 add('neovim/nvim-lspconfig')
 add('williamboman/mason-lspconfig.nvim')
 add('williamboman/mason.nvim')
-add('ellisonleao/gruvbox.nvim')
 
 require('better_escape').setup()
+require('gitsigns').setup()
 require('lspconfig').lua_ls.setup {}
 require('lspconfig').phpactor.setup {}
 require('mason').setup()
