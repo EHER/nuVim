@@ -67,8 +67,8 @@ The leader key is <kbd>space</kbd>
  - <kbd>K</kbd> Show hover information
  - <kbd>[</kbd> <kbd>b</kbd> Previous buffer
  - <kbd>]</kbd> <kbd>b</kbd> Next buffer
- - <kbd>g</kbd> <kbd>I</kbd> Go to implementation
  - <kbd>g</kbd> <kbd>D</kbd> Go to type declaration
+ - <kbd>g</kbd> <kbd>I</kbd> Go to implementation
  - <kbd>g</kbd> <kbd>y</kbd> Go to type definition
  - <kbd>space</kbd> <kbd>W</kbd> Write all buffers (save all)
  - <kbd>space</kbd> <kbd>b</kbd> <kbd>h</kbd> Hide other buffers
@@ -86,19 +86,20 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>o</kbd> Find visited paths
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>s</kbd> Find LSP symbols
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>w</kbd> Find word
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>B</kbd> Git blame
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>b</kbd> Git branches
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>c</kbd> Git commits
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> Open lazygit
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>h</kbd> Git hunks
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>t</kbd> Open tig
+ - <kbd>space</kbd> <kbd>l</kbd> <kbd>D</kbd> Document diagnostics
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>R</kbd> Show references
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>a</kbd> Code actions
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>d</kbd> Go to type definition
+ - <kbd>space</kbd> <kbd>l</kbd> <kbd>d</kbd> Line diagnostics
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>f</kbd> Format code
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>k</kbd> Show signature help
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>r</kbd> Rename
- - <kbd>space</kbd> <kbd>l</kbd> <kbd>d</kbd> Line diagnostics
- - <kbd>space</kbd> <kbd>l</kbd> <kbd>D</kbd> Document diagnostics
  - <kbd>space</kbd> <kbd>o</kbd> Open the file explorer
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>M</kbd> Update Mason plugins
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>m</kbd> Manage Mason plugins

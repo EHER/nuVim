@@ -68,6 +68,7 @@ vim.keymap.set('n', '<Leader>fo', ':Pick visit_paths<CR>', { desc = 'Find visite
 vim.keymap.set('n', '<Leader>fs', ":Pick lsp scope='document_symbol'<CR>", { desc = 'Find LSP symbols' })
 vim.keymap.set('n', '<Leader>fw', ':Pick grep_live<CR>', { desc = 'Find word' })
 vim.keymap.set('n', '<Leader>gb', ':Pick git_branches<CR>', { desc = 'Git branches' })
+vim.keymap.set('n', '<Leader>gB', function() require('gitsigns').blame_line{full=true} end, { desc = 'Git blame' })
 vim.keymap.set('n', '<Leader>gc', ':Pick git_commits<CR>', { desc = 'Git commits' })
 vim.keymap.set('n', '<Leader>gg', ':terminal lazygit<CR>', { desc = 'Open lazygit' })
 vim.keymap.set('n', '<Leader>gh', ':Pick git_hunks<CR>', { desc = 'Git hunks' })
