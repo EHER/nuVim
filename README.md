@@ -72,7 +72,6 @@ The leader key is <kbd>space</kbd>
  - <kbd>g</kbd> <kbd>D</kbd> Go to type declaration
  - <kbd>g</kbd> <kbd>I</kbd> Go to implementation
  - <kbd>g</kbd> <kbd>y</kbd> Go to type definition
- - <kbd>space</kbd> <kbd>W</kbd> Write all buffers (save all)
  - <kbd>space</kbd> <kbd>b</kbd> <kbd>h</kbd> Hide other buffers
  - <kbd>space</kbd> <kbd>c</kbd> Close the current buffer
  - <kbd>space</kbd> <kbd>e</kbd> Toggle the file explorer
@@ -113,4 +112,3 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>u</kbd> <kbd>o</kbd> Source the user configuration file
  - <kbd>space</kbd> <kbd>v</kbd> Toggle comment
  - <kbd>space</kbd> <kbd>w</kbd> Write the current buffer (save)
-
