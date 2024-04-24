@@ -35,7 +35,6 @@ require('mini.extra').setup()
 require('mini.files').setup()
 require('mini.jump').setup()
 require('mini.notify').setup()
-
 require('mini.operators').setup()
 require('mini.pairs').setup()
 require('mini.pick').setup()
@@ -52,7 +51,7 @@ local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_na
 
 vim.cmd('colorscheme gruvbox')
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<Leader>W', ':wall<CR>', { desc = 'Write all buffers (save all)' })
+vim.keymap.set('n', '<c-s>', '<Cmd>silent! update! | redraw<CR>', { desc = 'Force save' })
 vim.keymap.set('n', '<Leader>bh', ':only<CR>', { desc = 'Hide other buffers' })
 vim.keymap.set('n', '<Leader>c', ':bdelete<CR>', { desc = 'Close the current buffer' })
 vim.keymap.set('n', '<Leader>e', minifiles_toggle, { desc = 'Toggle the file explorer' })
@@ -88,7 +87,8 @@ vim.keymap.set('n', '<Leader>pM', ':MasonUpdate<CR>', { desc = 'Update Mason plu
 vim.keymap.set('n', '<Leader>pm', ':Mason<CR>', { desc = 'Manage Mason plugins' })
 vim.keymap.set('n', '<Leader>pu', require("mini.deps").update, { desc = 'Update plugins' })
 vim.keymap.set('n', '<Leader>px', require("mini.deps").clean, { desc = 'Clean plugins' })
-vim.keymap.set('n', '<Leader>q', ':q<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<Leader>q', ':quit<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<c-q>', ':q!<CR>', { desc = 'Force quit' })
 vim.keymap.set('n', '<Leader>ue', ':edit $MYVIMRC<CR>', { desc = 'Open the user configuration file' })
 vim.keymap.set('n', '<Leader>uo', ':source $MYVIMRC<CR>', { desc = 'Source the user configuration file' })
 vim.keymap.set('n', '<Leader>v', 'gcc', { desc = 'Toggle comment' })

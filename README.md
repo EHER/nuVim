@@ -67,6 +67,8 @@ The leader key is <kbd>space</kbd>
  - <kbd>K</kbd> Show hover information
  - <kbd>[</kbd> <kbd>b</kbd> Previous buffer
  - <kbd>]</kbd> <kbd>b</kbd> Next buffer
+ - <kbd>ctrl</kbd>+<kbd>q</kbd> Force quit
+ - <kbd>ctrl</kbd>+<kbd>s</kbd> Force save
  - <kbd>g</kbd> <kbd>D</kbd> Go to type declaration
  - <kbd>g</kbd> <kbd>I</kbd> Go to implementation
  - <kbd>g</kbd> <kbd>y</kbd> Go to type definition
