@@ -50,9 +50,10 @@ require('which-key').setup()
 local minifiles_toggle = function(...) if not require('mini.files').close() then require('mini.files').open(...) end end
 local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_name(0)) end
 
+vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
+vim.cmd('autocmd TermOpen * setlocal norelativenumber nonumber')
 vim.cmd('colorscheme gruvbox')
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<c-s>', '<Cmd>silent! update! | redraw<CR>', { desc = 'Force save' })
 vim.keymap.set('n', '<Leader>bh', ':only<CR>', { desc = 'Hide other buffers' })
 vim.keymap.set('n', '<Leader>c', ':bdelete<CR>', { desc = 'Close the current buffer' })
 vim.keymap.set('n', '<Leader>e', minifiles_toggle, { desc = 'Toggle the file explorer' })
@@ -89,11 +90,12 @@ vim.keymap.set('n', '<Leader>pm', ':Mason<CR>', { desc = 'Manage Mason plugins' 
 vim.keymap.set('n', '<Leader>pu', require("mini.deps").update, { desc = 'Update plugins' })
 vim.keymap.set('n', '<Leader>px', require("mini.deps").clean, { desc = 'Clean plugins' })
 vim.keymap.set('n', '<Leader>q', ':quit<CR>', { desc = 'Quit' })
-vim.keymap.set('n', '<c-q>', ':q!<CR>', { desc = 'Force quit' })
 vim.keymap.set('n', '<Leader>ue', ':edit $MYVIMRC<CR>', { desc = 'Open the user configuration file' })
 vim.keymap.set('n', '<Leader>uo', ':source $MYVIMRC<CR>', { desc = 'Source the user configuration file' })
 vim.keymap.set('n', '<Leader>v', 'gcc', { desc = 'Toggle comment' })
 vim.keymap.set('n', '<Leader>w', ':write<CR>', { desc = 'Write the current buffer (save)' })
+vim.keymap.set('n', '<c-q>', ':q!<CR>', { desc = 'Force quit' })
+vim.keymap.set('n', '<c-s>', '<Cmd>silent! update! | redraw<CR>', { desc = 'Force save' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show hover information' })
 vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
