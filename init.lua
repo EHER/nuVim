@@ -21,11 +21,12 @@ add('williamboman/mason.nvim')
 
 require('better_escape').setup()
 require('gitsigns').setup()
+require('lspconfig').eslint.setup {}
 require('lspconfig').lua_ls.setup {}
 require('lspconfig').phpactor.setup {}
 require('mason').setup()
 require('mason-lspconfig').setup()
-require('mason-lspconfig').setup({ ensure_installed = { "lua_ls", "phpactor" } })
+require('mason-lspconfig').setup({ ensure_installed = { "lua_ls", "eslint", "phpactor" } })
 require('mini.ai').setup()
 require('mini.animate').setup()
 require('mini.basics').setup()
