@@ -53,6 +53,8 @@ local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_na
 vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
 vim.cmd('autocmd TermOpen * setlocal norelativenumber nonumber')
 vim.cmd('colorscheme gruvbox')
+vim.cmd('set clipboard=unnamedplus')
+vim.cmd('autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<Leader>bh', ':only<CR>', { desc = 'Hide other buffers' })
 vim.keymap.set('n', '<Leader>c', ':bdelete<CR>', { desc = 'Close the current buffer' })
