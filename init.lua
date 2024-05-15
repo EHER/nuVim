@@ -62,7 +62,6 @@ require('null-ls').setup({
 local minifiles_toggle = function(...) if not require('mini.files').close() then require('mini.files').open(...) end end
 local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_name(0)) end
 
-vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
 vim.cmd('autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4')
 vim.cmd('autocmd TermOpen * setlocal norelativenumber nonumber')
 vim.cmd('colorscheme sonokai')
