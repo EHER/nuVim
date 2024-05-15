@@ -10,6 +10,7 @@ end
 require('mini.deps').setup({ path = { package = path_package } })
 local add = require('mini.deps').add
 
+add({source = 'NeogitOrg/neogit', branch = 'nightly'})
 add('folke/tokyonight.nvim')
 add('folke/which-key.nvim')
 add('github/copilot.vim')
@@ -48,6 +49,7 @@ require('mini.surround').setup()
 require('mini.tabline').setup()
 require('mini.trailspace').setup()
 require('mini.visits').setup()
+require('neogit').setup()
 require('which-key').setup()
 
 require('null-ls').setup({
@@ -86,6 +88,7 @@ vim.keymap.set('n', '<Leader>gB', function() require('gitsigns').blame_line { fu
 vim.keymap.set('n', '<Leader>gb', ':Pick git_branches<CR>', { desc = 'Git branches' })
 vim.keymap.set('n', '<Leader>gc', ':Pick git_commits<CR>', { desc = 'Git commits' })
 vim.keymap.set('n', '<Leader>gg', ':terminal lazygit<CR>', { desc = 'Open lazygit' })
+vim.keymap.set('n', '<Leader>gs', ':Neogit<CR>', { desc = 'Open git status on neogit' })
 vim.keymap.set('n', '<Leader>gh', ':Pick git_hunks<CR>', { desc = 'Git hunks' })
 vim.keymap.set('n', '<Leader>gp', require('gitsigns').preview_hunk, { desc = 'Preview git hunk' })
 vim.keymap.set('n', '<Leader>gt', ':terminal tig<CR>', { desc = 'Open tig' })
