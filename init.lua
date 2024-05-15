@@ -10,7 +10,7 @@ end
 require('mini.deps').setup({ path = { package = path_package } })
 local add = require('mini.deps').add
 
-add('ellisonleao/gruvbox.nvim')
+add('folke/tokyonight.nvim')
 add('folke/which-key.nvim')
 add('github/copilot.vim')
 add('lewis6991/gitsigns.nvim')
@@ -64,7 +64,7 @@ local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_na
 vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
 vim.cmd('autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4')
 vim.cmd('autocmd TermOpen * setlocal norelativenumber nonumber')
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme tokyonight-moon')
 vim.cmd('set clipboard=unnamedplus')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<Leader>bh', ':only<CR>', { desc = 'Hide other buffers' })
