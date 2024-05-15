@@ -21,6 +21,7 @@ add('nvimtools/none-ls-extras.nvim')
 add('nvimtools/none-ls.nvim')
 add('williamboman/mason-lspconfig.nvim')
 add('williamboman/mason.nvim')
+add('sainnhe/sonokai')
 
 require('better_escape').setup()
 require('gitsigns').setup()
@@ -64,7 +65,7 @@ local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_na
 vim.cmd("autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')")
 vim.cmd('autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4')
 vim.cmd('autocmd TermOpen * setlocal norelativenumber nonumber')
-vim.cmd('colorscheme tokyonight-moon')
+vim.cmd('colorscheme sonokai')
 vim.cmd('set clipboard=unnamedplus')
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<Leader>bh', ':only<CR>', { desc = 'Hide other buffers' })
