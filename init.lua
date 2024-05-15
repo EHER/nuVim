@@ -16,6 +16,9 @@ add('github/copilot.vim')
 add('lewis6991/gitsigns.nvim')
 add('max397574/better-escape.nvim')
 add('neovim/nvim-lspconfig')
+add('nvim-lua/plenary.nvim')
+add('nvimtools/none-ls-extras.nvim')
+add('nvimtools/none-ls.nvim')
 add('williamboman/mason-lspconfig.nvim')
 add('williamboman/mason.nvim')
 
@@ -46,6 +49,15 @@ require('mini.trailspace').setup()
 require('mini.visits').setup()
 require('which-key').setup()
 
+require('null-ls').setup({
+    sources = {
+        require("none-ls.diagnostics.eslint"),
+        require("null-ls").builtins.completion.spell,
+        require("null-ls").builtins.diagnostics.phpcs,
+        require("null-ls").builtins.formatting.phpcbf,
+    }
+})
+
 local minifiles_toggle = function(...) if not require('mini.files').close() then require('mini.files').open(...) end end
 local minifiles_toggle_cwd = function() minifiles_toggle(vim.api.nvim_buf_get_name(0)) end
 
@@ -70,7 +82,7 @@ vim.keymap.set('n', '<Leader>fl', ':Pick buf_lines<CR>', { desc = 'Find lines' }
 vim.keymap.set('n', '<Leader>fo', ':Pick visit_paths<CR>', { desc = 'Find visited paths' })
 vim.keymap.set('n', '<Leader>fs', ":Pick lsp scope='document_symbol'<CR>", { desc = 'Find LSP symbols' })
 vim.keymap.set('n', '<Leader>fw', ':Pick grep_live<CR>', { desc = 'Find word' })
-vim.keymap.set('n', '<Leader>gB', function() require('gitsigns').blame_line{full=true} end, { desc = 'Git blame' })
+vim.keymap.set('n', '<Leader>gB', function() require('gitsigns').blame_line { full = true } end, { desc = 'Git blame' })
 vim.keymap.set('n', '<Leader>gb', ':Pick git_branches<CR>', { desc = 'Git branches' })
 vim.keymap.set('n', '<Leader>gc', ':Pick git_commits<CR>', { desc = 'Git commits' })
 vim.keymap.set('n', '<Leader>gg', ':terminal lazygit<CR>', { desc = 'Open lazygit' })
