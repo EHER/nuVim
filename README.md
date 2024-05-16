@@ -5,23 +5,22 @@ Personalized Neovim configuration crafted for efficient PHP coding
 ## Revealing the Chronicles of Configuration
 
 Before setting sail on this journey, ensure that Neovim graces your digital
-shores (an absolute necessity!). With the stars above as your guide, steer
-towards the latest iteration of Neovim. While this choice offers a treasure
-trove of new features, it may also harbor a few bugs, adding a hint of
-adventure.
+shores (an absolute necessity!). Steer towards the latest iteration of Neovim,
+for it offers a treasure trove of new features. However, it may also harbor
+a few bugs, adding a hint of adventure.
 
-For those venturing into the realm of PHP, 'phactor' shall accompany you as the
-language-server, illuminating the path forward.
+For those venturing into the realm of PHP, let 'phactor' accompany you as the
+language server, illuminating the path forward.
 
-If you possess a previous configuration, a rebirth awaits; a simple renaming
+If you possess a previous configuration, a rebirth awaits. A simple renaming
 will grant it a new identity:
 
 ```bash
 mv ~/.config/nvim ~/.config/nvim.bak
 ```
 
-On the Linux landscape, the sanctuary of NeoVim configuration resides within
-~/.config/nvim. To embrace this configuration fully, a direct transplant
+On the Linux landscape, the sanctuary of Neovim configuration resides within
+~/.config/nvim. To fully embrace this configuration, a direct transplant
 awaits—a swift cloning of its essence:
 
 ```bash
@@ -93,6 +92,7 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> Open lazygit
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>h</kbd> Git hunks
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>p</kbd> Preview git hunk
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>s</kbd> Git status
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>t</kbd> Open tig
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>D</kbd> Document diagnostics
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>R</kbd> Show references
