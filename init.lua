@@ -21,7 +21,7 @@ add("nvimtools/none-ls.nvim")
 add("sainnhe/sonokai")
 add("williamboman/mason-lspconfig.nvim")
 add("williamboman/mason.nvim")
-add({ source = "NeogitOrg/neogit", branch = "nightly" })
+add({ source = "NeogitOrg/neogit", checkout = "nightly" })
 
 require("better_escape").setup()
 require("gitsigns").setup()
