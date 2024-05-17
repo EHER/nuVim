@@ -10,6 +10,7 @@ end
 require("mini.deps").setup({ path = { package = path_package } })
 local add = require("mini.deps").add
 
+add("NeogitOrg/neogit")
 add("folke/which-key.nvim")
 add("github/copilot.vim")
 add("lewis6991/gitsigns.nvim")
@@ -21,7 +22,6 @@ add("nvimtools/none-ls.nvim")
 add("sainnhe/sonokai")
 add("williamboman/mason-lspconfig.nvim")
 add("williamboman/mason.nvim")
-add({ source = "NeogitOrg/neogit", checkout = "nightly" })
 
 require("better_escape").setup()
 require("gitsigns").setup()
