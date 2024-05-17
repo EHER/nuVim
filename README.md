@@ -112,3 +112,4 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>u</kbd> <kbd>o</kbd> Source the user configuration file
  - <kbd>space</kbd> <kbd>v</kbd> Toggle comment
  - <kbd>space</kbd> <kbd>w</kbd> Write the current buffer (save)
+ - <kbd>space</kbd> <kbd>z</kbd> Open the terminal

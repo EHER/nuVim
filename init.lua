@@ -122,6 +122,7 @@ vim.keymap.set("n", "<Leader>ue", ":edit $MYVIMRC<CR>", { desc = "Open the user 
 vim.keymap.set("n", "<Leader>uo", ":source $MYVIMRC<CR>", { desc = "Source the user configuration file" })
 vim.keymap.set("n", "<Leader>v", "gcc", { desc = "Toggle comment" })
 vim.keymap.set("n", "<Leader>w", ":write<CR>", { desc = "Write the current buffer (save)" })
+vim.keymap.set("n", "<Leader>z", ":terminal<CR>", { desc = "Open terminal" })
 vim.keymap.set("n", "<c-q>", ":q!<CR>", { desc = "Force quit" })
 vim.keymap.set("n", "<c-s>", "<Cmd>silent! update! | redraw<CR>", { desc = "Force save" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover information" })
