@@ -66,12 +66,17 @@ local minifiles_toggle = function(...)
         require("mini.files").open(...)
     end
 end
+
 local minifiles_toggle_cwd = function()
     minifiles_toggle(vim.api.nvim_buf_get_name(0))
 end
 
-vim.cmd("autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4")
+local git_blame = function()
+    require("gitsigns").blame_line({ full = true })
+end
+
 vim.cmd("autocmd FileType * setlocal nofoldenable")
+vim.cmd("autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4")
 vim.cmd("autocmd TermOpen * setlocal norelativenumber nonumber")
 vim.cmd("colorscheme sonokai")
 vim.cmd("set clipboard=unnamedplus")
@@ -91,11 +96,9 @@ vim.keymap.set("n", "<Leader>fl", ":Pick buf_lines<CR>", { desc = "Find lines" }
 vim.keymap.set("n", "<Leader>fo", ":Pick visit_paths<CR>", { desc = "Find visited paths" })
 vim.keymap.set("n", "<Leader>fs", ":Pick lsp scope='document_symbol'<CR>", { desc = "Find LSP symbols" })
 vim.keymap.set("n", "<Leader>fw", ":Pick grep_live<CR>", { desc = "Find word" })
-vim.keymap.set("n", "<Leader>gB", function()
-    require("gitsigns").blame_line({ full = true })
-end, { desc = "Git blame" })
-vim.keymap.set("n", "<Leader>gb", ":Pick git_branches<CR>", { desc = "Git branches" })
-vim.keymap.set("n", "<Leader>gc", ":Pick git_commits<CR>", { desc = "Git commits" })
+vim.keymap.set("n", "<Leader>gB", git_blame, { desc = "Git blame" })
+vim.keymap.set("n", "<Leader>gb", ":Neogit branch<CR>", { desc = "Git branch" })
+vim.keymap.set("n", "<Leader>gc", ":Neogit commit<CR>", { desc = "Git commit" })
 vim.keymap.set("n", "<Leader>gg", ":terminal lazygit<CR>", { desc = "Open lazygit" })
 vim.keymap.set("n", "<Leader>gh", ":Pick git_hunks<CR>", { desc = "Git hunks" })
 vim.keymap.set("n", "<Leader>gp", require("gitsigns").preview_hunk, { desc = "Preview git hunk" })
@@ -105,9 +108,7 @@ vim.keymap.set("n", "<Leader>lD", ":Pick diagnostic<CR>", { desc = "Document dia
 vim.keymap.set("n", "<Leader>lR", vim.lsp.buf.references, { desc = "Show references" })
 vim.keymap.set("n", "<Leader>ld", vim.diagnostic.open_float, { desc = "Line diagnostics" })
 vim.keymap.set("n", "<Leader>ld", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
-vim.keymap.set("n", "<Leader>lf", function()
-    vim.lsp.buf.format({ async = true })
-end, { desc = "Format code" })
+vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, { desc = "Format code" })
 vim.keymap.set("n", "<Leader>lk", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<Leader>ls", vim.lsp.buf.document_symbol, { desc = "Show symbols" })

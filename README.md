@@ -87,8 +87,8 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>s</kbd> Find LSP symbols
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>w</kbd> Find word
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>B</kbd> Git blame
- - <kbd>space</kbd> <kbd>g</kbd> <kbd>b</kbd> Git branches
- - <kbd>space</kbd> <kbd>g</kbd> <kbd>c</kbd> Git commits
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>b</kbd> Git branch
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>c</kbd> Git commit
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> Open lazygit
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>h</kbd> Git hunks
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>p</kbd> Preview git hunk
