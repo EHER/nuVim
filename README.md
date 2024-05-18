@@ -65,6 +65,7 @@ The leader key is <kbd>space</kbd>
 
  - <kbd>K</kbd> Show hover information
  - <kbd>[</kbd> <kbd>b</kbd> Previous buffer
+ - <kbd>\</kbd> Split the window horizontally
  - <kbd>]</kbd> <kbd>b</kbd> Next buffer
  - <kbd>ctrl</kbd>+<kbd>q</kbd> Force quit
  - <kbd>ctrl</kbd>+<kbd>s</kbd> Force save
@@ -113,3 +114,4 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>v</kbd> Toggle comment
  - <kbd>space</kbd> <kbd>w</kbd> Write the current buffer (save)
  - <kbd>space</kbd> <kbd>z</kbd> Open the terminal
+ - <kbd>|</kbd> Split the window vertically
