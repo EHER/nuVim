@@ -19,7 +19,7 @@ require("mini.deps").add("nvimtools/none-ls.nvim")
 require("mini.deps").add("sainnhe/sonokai")
 require("mini.deps").add("williamboman/mason.nvim")
 require("mini.deps").add("williamboman/mason-lspconfig.nvim")
-require("mini.deps").setup({ ppath = { package = path_package } })
+require("mini.deps").setup({ path = { package = path_package } })
 
 require("better_escape").setup()
 require("gitsigns").setup()
