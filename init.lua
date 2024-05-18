@@ -74,12 +74,12 @@ local git_blame = function()
 end
 
 vim.g.mapleader = " "
+vim.keymap.set("n", "<Leader>bb", ":Pick buffers<CR>", { desc = "Show buffers" })
 vim.keymap.set("n", "<Leader>bh", ":only<CR>", { desc = "Hide other buffers" })
 vim.keymap.set("n", "<Leader>c", ":bdelete<CR>", { desc = "Close the current buffer" })
 vim.keymap.set("n", "<Leader>e", minifiles_toggle, { desc = "Toggle the file explorer" })
 vim.keymap.set("n", "<Leader>fC", ":Pick commands<CR>", { desc = "Find commands" })
 vim.keymap.set("n", "<Leader>fH", ":Pick help<CR>", { desc = "Find help" })
-vim.keymap.set("n", "<Leader>fb", ":Pick buffers<CR>", { desc = "Find buffers" })
 vim.keymap.set("n", "<Leader>fc", ":Pick grep pattern='<c-r><c-w>'<CR>", { desc = "Find word under the cursor" })
 vim.keymap.set("n", "<Leader>fe", ":Pick explorer<CR>", { desc = "Find files (explorer)" })
 vim.keymap.set("n", "<Leader>ff", ":Pick files<CR>", { desc = "Find files" })
