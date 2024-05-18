@@ -1,27 +1,25 @@
 local path_package = vim.fn.stdpath("data") .. "/site"
-
 local mini_path = path_package .. "/pack/deps/start/mini.nvim"
+
 if not vim.loop.fs_stat(mini_path) then
     vim.cmd('echo "Installing `mini.nvim`" | redraw')
     vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/echasnovski/mini.nvim", mini_path })
     vim.cmd("packadd mini.nvim | helptags ALL")
 end
 
-require("mini.deps").setup({ path = { package = path_package } })
-local add = require("mini.deps").add
-
-add("NeogitOrg/neogit")
-add("folke/which-key.nvim")
-add("github/copilot.vim")
-add("lewis6991/gitsigns.nvim")
-add("max397574/better-escape.nvim")
-add("neovim/nvim-lspconfig")
-add("nvim-lua/plenary.nvim")
-add("nvimtools/none-ls-extras.nvim")
-add("nvimtools/none-ls.nvim")
-add("sainnhe/sonokai")
-add("williamboman/mason-lspconfig.nvim")
-add("williamboman/mason.nvim")
+require("mini.deps").add("NeogitOrg/neogit")
+require("mini.deps").add("folke/which-key.nvim")
+require("mini.deps").add("github/copilot.vim")
+require("mini.deps").add("lewis6991/gitsigns.nvim")
+require("mini.deps").add("max397574/better-escape.nvim")
+require("mini.deps").add("neovim/nvim-lspconfig")
+require("mini.deps").add("nvim-lua/plenary.nvim")
+require("mini.deps").add("nvimtools/none-ls-extras.nvim")
+require("mini.deps").add("nvimtools/none-ls.nvim")
+require("mini.deps").add("sainnhe/sonokai")
+require("mini.deps").add("williamboman/mason.nvim")
+require("mini.deps").add("williamboman/mason-lspconfig.nvim")
+require("mini.deps").setup({ ppath = { package = path_package } })
 
 require("better_escape").setup()
 require("gitsigns").setup()
@@ -75,11 +73,6 @@ local git_blame = function()
     require("gitsigns").blame_line({ full = true })
 end
 
-vim.cmd("autocmd FileType * setlocal nofoldenable")
-vim.cmd("autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4")
-vim.cmd("autocmd TermOpen * setlocal norelativenumber nonumber")
-vim.cmd("colorscheme sonokai")
-vim.cmd("set clipboard=unnamedplus")
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>bh", ":only<CR>", { desc = "Hide other buffers" })
 vim.keymap.set("n", "<Leader>c", ":bdelete<CR>", { desc = "Close the current buffer" })
@@ -136,5 +129,11 @@ vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to type declarat
 vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 vim.keymap.set("n", "gy", vim.lsp.buf.definition, { desc = "Go to type definition" })
 vim.keymap.set({ "n", "v" }, "<Leader>la", vim.lsp.buf.code_action, { desc = "Code actions" })
+
+vim.cmd("autocmd FileType * setlocal nofoldenable")
+vim.cmd("autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4")
+vim.cmd("autocmd TermOpen * setlocal norelativenumber nonumber")
+vim.cmd("colorscheme sonokai")
+vim.cmd("set clipboard=unnamedplus")
 vim.o.hidden = true
 vim.opt.relativenumber = true
