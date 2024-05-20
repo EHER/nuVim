@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.o.hidden = true
+
 local path_package = vim.fn.stdpath("data") .. "/site"
 local mini_path = path_package .. "/pack/deps/start/mini.nvim"
 
@@ -11,6 +14,8 @@ require("mini.deps").add("MunifTanjim/nui.nvim")
 require("mini.deps").add("NeogitOrg/neogit")
 require("mini.deps").add("folke/which-key.nvim")
 require("mini.deps").add("gruvbox-community/gruvbox")
+require("mini.deps").add("hrsh7th/cmp-nvim-lsp")
+require("mini.deps").add("hrsh7th/nvim-cmp")
 require("mini.deps").add("lewis6991/gitsigns.nvim")
 require("mini.deps").add("max397574/better-escape.nvim")
 require("mini.deps").add("neovim/nvim-lspconfig")
@@ -23,9 +28,11 @@ require("mini.deps").add("nvimtools/none-ls.nvim")
 require("mini.deps").add("williamboman/mason-lspconfig.nvim")
 require("mini.deps").add("williamboman/mason.nvim")
 require("mini.deps").add("zbirenbaum/copilot.lua")
+require("mini.deps").add("zbirenbaum/copilot-cmp")
 require("mini.deps").setup({ path = { package = path_package } })
 
-require("copilot").setup()
+require("copilot").setup({ suggestion = { enabled = false }, panel = { enabled = false } })
+require("copilot_cmp").setup()
 require("gitsigns").setup()
 require("lspconfig").eslint.setup({})
 require("lspconfig").lua_ls.setup({})
@@ -35,7 +42,6 @@ require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "eslint", "php
 require("mini.ai").setup()
 require("mini.basics").setup()
 require("mini.comment").setup()
-require("mini.completion").setup()
 require("mini.extra").setup()
 require("mini.jump").setup()
 require("mini.notify").setup()
@@ -49,7 +55,13 @@ require("mini.tabline").setup()
 require("mini.trailspace").setup()
 require("mini.visits").setup()
 require("neogit").setup()
+require("nvim-treesitter.configs").setup({ ensure_installed = { "lua", "php" }, highlight = { enable = true } })
 require("which-key").setup()
+
+require("cmp").setup({
+    sources = require("cmp").config.sources({ { name = "copilot" }, { name = "nvim_lsp" } }),
+    mapping = require("cmp").mapping.preset.insert({ ["<CR>"] = require("cmp").mapping.confirm({ select = true }) }),
+})
 
 require("null-ls").setup({
     sources = {
@@ -60,16 +72,6 @@ require("null-ls").setup({
         require("null-ls").builtins.formatting.stylua,
     },
 })
-
-require("nvim-treesitter.configs").setup({
-    ensure_installed = { "lua", "php", "typescript" },
-    highlight = { enable = true },
-    ident = { enable = true },
-    incremental_selection = { enable = true },
-})
-
-vim.g.mapleader = " "
-vim.o.hidden = true
 
 vim.keymap.set("n", "<Leader>bb", ":Telescope buffers<CR>", { desc = "Show buffers" })
 vim.keymap.set("n", "<Leader>bh", ":only<CR>", { desc = "Hide other buffers" })
