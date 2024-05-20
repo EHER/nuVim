@@ -63,10 +63,6 @@ require("null-ls").setup({
 vim.g.mapleader = " "
 vim.o.hidden = true
 
-local git_blame = function()
-    require("gitsigns").blame_line({ full = true })
-end
-
 vim.keymap.set("n", "<Leader>bb", ":Telescope buffers<CR>", { desc = "Show buffers" })
 vim.keymap.set("n", "<Leader>bh", ":only<CR>", { desc = "Hide other buffers" })
 vim.keymap.set("n", "<Leader>c", ":bdelete<CR>", { desc = "Close the current buffer" })
@@ -80,7 +76,7 @@ vim.keymap.set("n", "<Leader>fg", ":Telescope git_files<CR>", { desc = "Find git
 vim.keymap.set("n", "<Leader>fh", ":Telescope command_history<CR>", { desc = "Find history" })
 vim.keymap.set("n", "<Leader>fo", ":Telescope oldfiles<CR>", { desc = "Find visited paths" })
 vim.keymap.set("n", "<Leader>fw", ":Telescope live_grep<CR>", { desc = "Find word" })
-vim.keymap.set("n", "<Leader>gB", git_blame, { desc = "Git blame" })
+vim.keymap.set("n", "<Leader>gB", require("gitsigns").blame_line, { desc = "Git blame" })
 vim.keymap.set("n", "<Leader>gb", ":Telescope git_branches<CR>", { desc = "Git branch" })
 vim.keymap.set("n", "<Leader>gc", ":Neogit commit<CR>", { desc = "Git commit" })
 vim.keymap.set("n", "<Leader>gg", ":terminal lazygit<CR>", { desc = "Open lazygit" })
