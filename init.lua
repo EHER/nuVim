@@ -18,6 +18,7 @@ require("mini.deps").add("neovim/nvim-lspconfig")
 require("mini.deps").add("nvim-lua/plenary.nvim")
 require("mini.deps").add("nvim-neo-tree/neo-tree.nvim")
 require("mini.deps").add("nvim-telescope/telescope.nvim")
+require("mini.deps").add("nvim-treesitter/nvim-treesitter")
 require("mini.deps").add("nvimtools/none-ls-extras.nvim")
 require("mini.deps").add("nvimtools/none-ls.nvim")
 require("mini.deps").add("williamboman/mason-lspconfig.nvim")
@@ -57,6 +58,13 @@ require("null-ls").setup({
         require("null-ls").builtins.formatting.phpcbf,
         require("null-ls").builtins.formatting.stylua,
     },
+})
+
+require("nvim-treesitter.configs").setup({
+    ensure_installed = { "lua", "php", "typescript" },
+    highlight = { enable = true },
+    ident = { enable = true },
+    incremental_selection = { enable = true },
 })
 
 vim.g.mapleader = " "
