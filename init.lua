@@ -7,6 +7,7 @@ if not vim.loop.fs_stat(mini_path) then
     vim.cmd("packadd mini.nvim | helptags ALL")
 end
 
+require("mini.deps").add("MunifTanjim/nui.nvim")
 require("mini.deps").add("NeogitOrg/neogit")
 require("mini.deps").add("folke/which-key.nvim")
 require("mini.deps").add("github/copilot.vim")
@@ -14,10 +15,12 @@ require("mini.deps").add("lewis6991/gitsigns.nvim")
 require("mini.deps").add("max397574/better-escape.nvim")
 require("mini.deps").add("neovim/nvim-lspconfig")
 require("mini.deps").add("nvim-lua/plenary.nvim")
+require("mini.deps").add("nvim-neo-tree/neo-tree.nvim")
+require("mini.deps").add("nvim-telescope/telescope.nvim")
 require("mini.deps").add("nvimtools/none-ls-extras.nvim")
 require("mini.deps").add("nvimtools/none-ls.nvim")
-require("mini.deps").add("williamboman/mason.nvim")
 require("mini.deps").add("williamboman/mason-lspconfig.nvim")
+require("mini.deps").add("williamboman/mason.nvim")
 require("mini.deps").setup({ path = { package = path_package } })
 
 require("better_escape").setup()
@@ -32,7 +35,6 @@ require("mini.basics").setup()
 require("mini.comment").setup()
 require("mini.completion").setup()
 require("mini.extra").setup()
-require("mini.files").setup({ mappings = { synchronize = "<escape>", go_in_plus = "<CR>" } })
 require("mini.hues").setup({ background = "#282828", foreground = "#ebdbb2"})
 require("mini.jump").setup()
 require("mini.notify").setup()
@@ -58,41 +60,30 @@ require("null-ls").setup({
     },
 })
 
-local minifiles_toggle = function(...)
-    if not require("mini.files").close() then
-        require("mini.files").open(...)
-    end
-end
-
-local minifiles_toggle_cwd = function()
-    minifiles_toggle(vim.api.nvim_buf_get_name(0))
-end
+vim.g.mapleader = " "
+vim.o.hidden = true
 
 local git_blame = function()
     require("gitsigns").blame_line({ full = true })
 end
 
-vim.g.mapleader = " "
-vim.keymap.set("n", "<Leader>bb", ":Pick buffers<CR>", { desc = "Show buffers" })
+vim.keymap.set("n", "<Leader>bb", ":Telescope buffers<CR>", { desc = "Show buffers" })
 vim.keymap.set("n", "<Leader>bh", ":only<CR>", { desc = "Hide other buffers" })
 vim.keymap.set("n", "<Leader>c", ":bdelete<CR>", { desc = "Close the current buffer" })
-vim.keymap.set("n", "<Leader>e", minifiles_toggle, { desc = "Toggle the file explorer" })
-vim.keymap.set("n", "<Leader>fC", ":Pick commands<CR>", { desc = "Find commands" })
-vim.keymap.set("n", "<Leader>fH", ":Pick help<CR>", { desc = "Find help" })
-vim.keymap.set("n", "<Leader>fc", ":Pick grep pattern='<c-r><c-w>'<CR>", { desc = "Find word under the cursor" })
+vim.keymap.set("n", "<Leader>e", ":Neotree toggle<CR>", { desc = "Toggle the file explorer" })
+vim.keymap.set("n", "<Leader>fC", ":Telescope commands<CR>", { desc = "Find commands" })
+vim.keymap.set("n", "<Leader>fH", ":Telescope help_tags<CR>", { desc = "Find help" })
+vim.keymap.set("n", "<Leader>fc", ":Telescope grep_string<CR>", { desc = "Find word under the cursor" })
 vim.keymap.set("n", "<Leader>fe", ":Pick explorer<CR>", { desc = "Find files (explorer)" })
-vim.keymap.set("n", "<Leader>ff", ":Pick files<CR>", { desc = "Find files" })
-vim.keymap.set("n", "<Leader>fg", ":Pick git_files<CR>", { desc = "Find git files" })
-vim.keymap.set("n", "<Leader>fh", ":Pick history<CR>", { desc = "Find history" })
-vim.keymap.set("n", "<Leader>fl", ":Pick buf_lines<CR>", { desc = "Find lines" })
-vim.keymap.set("n", "<Leader>fo", ":Pick visit_paths<CR>", { desc = "Find visited paths" })
-vim.keymap.set("n", "<Leader>fs", ":Pick lsp scope='document_symbol'<CR>", { desc = "Find LSP symbols" })
-vim.keymap.set("n", "<Leader>fw", ":Pick grep_live<CR>", { desc = "Find word" })
+vim.keymap.set("n", "<Leader>ff", ":Telescope find_files<CR>", { desc = "Find files" })
+vim.keymap.set("n", "<Leader>fg", ":Telescope git_files<CR>", { desc = "Find git files" })
+vim.keymap.set("n", "<Leader>fh", ":Telescope command_history<CR>", { desc = "Find history" })
+vim.keymap.set("n", "<Leader>fo", ":Telescope oldfiles<CR>", { desc = "Find visited paths" })
+vim.keymap.set("n", "<Leader>fw", ":Telescope live_grep<CR>", { desc = "Find word" })
 vim.keymap.set("n", "<Leader>gB", git_blame, { desc = "Git blame" })
-vim.keymap.set("n", "<Leader>gb", ":Neogit branch<CR>", { desc = "Git branch" })
+vim.keymap.set("n", "<Leader>gb", ":Telescope git_branches<CR>", { desc = "Git branch" })
 vim.keymap.set("n", "<Leader>gc", ":Neogit commit<CR>", { desc = "Git commit" })
 vim.keymap.set("n", "<Leader>gg", ":terminal lazygit<CR>", { desc = "Open lazygit" })
-vim.keymap.set("n", "<Leader>gh", ":Pick git_hunks<CR>", { desc = "Git hunks" })
 vim.keymap.set("n", "<Leader>gp", require("gitsigns").preview_hunk, { desc = "Preview git hunk" })
 vim.keymap.set("n", "<Leader>gs", ":Neogit<CR>", { desc = "Git status" })
 vim.keymap.set("n", "<Leader>gt", ":terminal tig<CR>", { desc = "Open tig" })
@@ -104,7 +95,7 @@ vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, { desc = "Format code" })
 vim.keymap.set("n", "<Leader>lk", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<Leader>ls", vim.lsp.buf.document_symbol, { desc = "Show symbols" })
-vim.keymap.set("n", "<Leader>o", minifiles_toggle_cwd, { desc = "Open the file explorer" })
+vim.keymap.set("n", "<Leader>o", ":Neotree toggle reveal focus<CR>", { desc = "Open the file explorer" })
 vim.keymap.set("n", "<Leader>pM", ":MasonUpdate<CR>", { desc = "Update Mason plugins" })
 vim.keymap.set("n", "<Leader>pm", ":Mason<CR>", { desc = "Manage Mason plugins" })
 vim.keymap.set("n", "<Leader>pu", require("mini.deps").update, { desc = "Update plugins" })
@@ -135,5 +126,3 @@ vim.cmd("autocmd FileType * setlocal nofoldenable")
 vim.cmd("autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4")
 vim.cmd("autocmd TermOpen * setlocal norelativenumber nonumber")
 vim.cmd("set clipboard=unnamedplus")
-vim.o.hidden = true
-vim.opt.relativenumber = true
