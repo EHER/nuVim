@@ -25,6 +25,7 @@ require("mini.deps").add("nvim-telescope/telescope.nvim")
 require("mini.deps").add("nvim-treesitter/nvim-treesitter")
 require("mini.deps").add("nvimtools/none-ls-extras.nvim")
 require("mini.deps").add("nvimtools/none-ls.nvim")
+require("mini.deps").add("voldikss/vim-floaterm")
 require("mini.deps").add("williamboman/mason-lspconfig.nvim")
 require("mini.deps").add("williamboman/mason.nvim")
 require("mini.deps").add("zbirenbaum/copilot.lua")
@@ -73,6 +74,13 @@ require("null-ls").setup({
     },
 })
 
+require("nvim-treesitter.configs").setup({
+    ensure_installed = { "lua", "php", "typescript" },
+    highlight = { enable = true },
+    ident = { enable = true },
+    incremental_selection = { enable = true },
+})
+
 vim.keymap.set("n", "<Leader>bb", ":Telescope buffers<CR>", { desc = "Show buffers" })
 vim.keymap.set("n", "<Leader>bh", ":only<CR>", { desc = "Hide other buffers" })
 vim.keymap.set("n", "<Leader>c", ":bdelete<CR>", { desc = "Close the current buffer" })
@@ -89,10 +97,10 @@ vim.keymap.set("n", "<Leader>fw", ":Telescope live_grep<CR>", { desc = "Find wor
 vim.keymap.set("n", "<Leader>gB", require("gitsigns").blame_line, { desc = "Git blame" })
 vim.keymap.set("n", "<Leader>gb", ":Telescope git_branches<CR>", { desc = "Git branch" })
 vim.keymap.set("n", "<Leader>gc", ":Neogit commit<CR>", { desc = "Git commit" })
-vim.keymap.set("n", "<Leader>gg", ":terminal lazygit<CR>", { desc = "Open lazygit" })
+vim.keymap.set("n", "<Leader>gg", ":FloatermNew lazygit<CR>", { desc = "Open lazygit" })
 vim.keymap.set("n", "<Leader>gp", require("gitsigns").preview_hunk, { desc = "Preview git hunk" })
 vim.keymap.set("n", "<Leader>gs", ":Neogit<CR>", { desc = "Git status" })
-vim.keymap.set("n", "<Leader>gt", ":terminal tig<CR>", { desc = "Open tig" })
+vim.keymap.set("n", "<Leader>gt", ":FloatermNew tig<CR>", { desc = "Open tig" })
 vim.keymap.set("n", "<Leader>lD", ":Pick diagnostic<CR>", { desc = "Document diagnostics" })
 vim.keymap.set("n", "<Leader>lR", vim.lsp.buf.references, { desc = "Show references" })
 vim.keymap.set("n", "<Leader>ld", vim.diagnostic.open_float, { desc = "Line diagnostics" })
