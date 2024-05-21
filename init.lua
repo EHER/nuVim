@@ -126,7 +126,6 @@ vim.keymap.set("n", "<Leader>px", require("mini.deps").clean, { desc = "Clean pl
 vim.keymap.set("n", "<Leader>q", ":quit<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<Leader>ue", ":edit $MYVIMRC<CR>", { desc = "Open the user configuration file" })
 vim.keymap.set("n", "<Leader>uo", ":source $MYVIMRC<CR>", { desc = "Source the user configuration file" })
-vim.keymap.set("n", "<Leader>v", "gcc", { desc = "Toggle comment" })
 vim.keymap.set("n", "<Leader>w", ":write<CR>", { desc = "Write the current buffer (save)" })
 vim.keymap.set("n", "<Leader>z", ":terminal<CR>", { desc = "Open terminal" })
 vim.keymap.set("n", "<c-q>", ":q!<CR>", { desc = "Force quit" })
