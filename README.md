@@ -85,11 +85,16 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>h</kbd> Find history
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>o</kbd> Find visited paths
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>w</kbd> Find word
- - <kbd>space</kbd> <kbd>g</kbd> <kbd>B</kbd> Git blame
- - <kbd>space</kbd> <kbd>g</kbd> <kbd>b</kbd> Git branch
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>B</kbd> Git branch
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>C</kbd> Git commits on current buffer
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>D</kbd> Git diff all files
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>P</kbd> Git push
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>b</kbd> Git blame
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>c</kbd> Git commit
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>d</kbd> Git diff current buffer
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> Open lazygit
- - <kbd>space</kbd> <kbd>g</kbd> <kbd>p</kbd> Preview git hunk
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>h</kbd> Preview git hunk
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>p</kbd> Git pull
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>s</kbd> Git status
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>t</kbd> Open tig
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>D</kbd> Document diagnostics

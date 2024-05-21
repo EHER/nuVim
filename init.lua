@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.o.hidden = true
+vim.o.relativenumber = true
 
 local path_package = vim.fn.stdpath("data") .. "/site"
 local mini_path = path_package .. "/pack/deps/start/mini.nvim"
@@ -11,7 +12,6 @@ if not vim.loop.fs_stat(mini_path) then
 end
 
 require("mini.deps").add("MunifTanjim/nui.nvim")
-require("mini.deps").add("NeogitOrg/neogit")
 require("mini.deps").add("folke/which-key.nvim")
 require("mini.deps").add("gruvbox-community/gruvbox")
 require("mini.deps").add("hrsh7th/cmp-nvim-lsp")
@@ -28,8 +28,8 @@ require("mini.deps").add("nvimtools/none-ls.nvim")
 require("mini.deps").add("voldikss/vim-floaterm")
 require("mini.deps").add("williamboman/mason-lspconfig.nvim")
 require("mini.deps").add("williamboman/mason.nvim")
-require("mini.deps").add("zbirenbaum/copilot.lua")
 require("mini.deps").add("zbirenbaum/copilot-cmp")
+require("mini.deps").add("zbirenbaum/copilot.lua")
 require("mini.deps").setup({ path = { package = path_package } })
 
 require("copilot").setup({ suggestion = { enabled = false }, panel = { enabled = false } })
@@ -42,6 +42,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "eslint", "phpactor" } })
 require("mini.ai").setup()
 require("mini.basics").setup()
+require("mini.bufremove").setup()
 require("mini.comment").setup()
 require("mini.extra").setup()
 require("mini.jump").setup()
@@ -55,7 +56,6 @@ require("mini.surround").setup()
 require("mini.tabline").setup()
 require("mini.trailspace").setup()
 require("mini.visits").setup()
-require("neogit").setup()
 require("nvim-treesitter.configs").setup({ ensure_installed = { "lua", "php" }, highlight = { enable = true } })
 require("which-key").setup()
 
@@ -83,7 +83,7 @@ require("nvim-treesitter.configs").setup({
 
 vim.keymap.set("n", "<Leader>bb", ":Telescope buffers<CR>", { desc = "Show buffers" })
 vim.keymap.set("n", "<Leader>bh", ":only<CR>", { desc = "Hide other buffers" })
-vim.keymap.set("n", "<Leader>c", ":bdelete<CR>", { desc = "Close the current buffer" })
+vim.keymap.set("n", "<Leader>c", require("mini.bufremove").delete, { desc = "Close the current buffer" })
 vim.keymap.set("n", "<Leader>e", ":Neotree toggle<CR>", { desc = "Toggle the file explorer" })
 vim.keymap.set("n", "<Leader>fC", ":Telescope commands<CR>", { desc = "Find commands" })
 vim.keymap.set("n", "<Leader>fH", ":Telescope help_tags<CR>", { desc = "Find help" })
@@ -94,12 +94,17 @@ vim.keymap.set("n", "<Leader>fg", ":Telescope git_files<CR>", { desc = "Find git
 vim.keymap.set("n", "<Leader>fh", ":Telescope command_history<CR>", { desc = "Find history" })
 vim.keymap.set("n", "<Leader>fo", ":Telescope oldfiles<CR>", { desc = "Find visited paths" })
 vim.keymap.set("n", "<Leader>fw", ":Telescope live_grep<CR>", { desc = "Find word" })
-vim.keymap.set("n", "<Leader>gB", require("gitsigns").blame_line, { desc = "Git blame" })
-vim.keymap.set("n", "<Leader>gb", ":Telescope git_branches<CR>", { desc = "Git branch" })
-vim.keymap.set("n", "<Leader>gc", ":Neogit commit<CR>", { desc = "Git commit" })
+vim.keymap.set("n", "<Leader>gB", ":Telescope git_branches<CR>", { desc = "Git branch" })
+vim.keymap.set("n", "<Leader>gC", ":Telescope git_bcommits<CR>", { desc = "Git commits of current buffer" })
+vim.keymap.set("n", "<Leader>gD", ":FloatermNew git diff<CR>", { desc = "Git diff" })
+vim.keymap.set("n", "<Leader>gP", ":FloatermNew git push<CR>", { desc = "Git push" })
+vim.keymap.set("n", "<Leader>gb", require("gitsigns").blame_line, { desc = "git blame" })
+vim.keymap.set("n", "<Leader>gc", ":FloatermNew git commit<CR>", { desc = "Git commit" })
+vim.keymap.set("n", "<Leader>gd", ":FloatermNew git diff %<CR>", { desc = "Git diff" })
 vim.keymap.set("n", "<Leader>gg", ":FloatermNew lazygit<CR>", { desc = "Open lazygit" })
-vim.keymap.set("n", "<Leader>gp", require("gitsigns").preview_hunk, { desc = "Preview git hunk" })
-vim.keymap.set("n", "<Leader>gs", ":Neogit<CR>", { desc = "Git status" })
+vim.keymap.set("n", "<Leader>gh", require("gitsigns").preview_hunk, { desc = "Preview git hunk" })
+vim.keymap.set("n", "<Leader>gp", ":FloatermNew git pull<CR>", { desc = "Git pull" })
+vim.keymap.set("n", "<Leader>gs", ":Telescope git_status<CR>", { desc = "Git status" })
 vim.keymap.set("n", "<Leader>gt", ":FloatermNew tig<CR>", { desc = "Open tig" })
 vim.keymap.set("n", "<Leader>lD", ":Pick diagnostic<CR>", { desc = "Document diagnostics" })
 vim.keymap.set("n", "<Leader>lR", vim.lsp.buf.references, { desc = "Show references" })
@@ -136,8 +141,6 @@ vim.keymap.set("n", "gy", vim.lsp.buf.definition, { desc = "Go to type definitio
 vim.keymap.set("n", "|", ":vsp<CR>", { desc = "Split vertically" })
 vim.keymap.set({ "n", "v" }, "<Leader>la", vim.lsp.buf.code_action, { desc = "Code actions" })
 
-vim.cmd("autocmd FileType * setlocal nofoldenable")
 vim.cmd("autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4")
-vim.cmd("autocmd TermOpen * setlocal norelativenumber nonumber")
 vim.cmd("set clipboard=unnamedplus")
 vim.cmd.colorscheme("gruvbox")
