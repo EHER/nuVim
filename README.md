@@ -105,7 +105,7 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>f</kbd> Format code
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>k</kbd> Show signature help
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>r</kbd> Rename
- - <kbd>space</kbd> <kbd>o</kbd> Open the file explorer
+ - <kbd>space</kbd> <kbd>o</kbd> Focus files explorer on buffer path
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>M</kbd> Update Mason plugins
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>m</kbd> Manage Mason plugins
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>u</kbd> Update plugins
