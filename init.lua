@@ -81,8 +81,12 @@ require("nvim-treesitter.configs").setup({
     incremental_selection = { enable = true },
 })
 
+vim.keymap.set("n", "<Leader>bH", require("mini.bufremove").unshow_in_window, { desc = "Hide buffer from window" })
 vim.keymap.set("n", "<Leader>bb", ":Telescope buffers<CR>", { desc = "Show buffers" })
-vim.keymap.set("n", "<Leader>bh", ":only<CR>", { desc = "Hide other buffers" })
+vim.keymap.set("n", "<Leader>bd", require("mini.bufremove").delete, { desc = "Delete buffer" })
+vim.keymap.set("n", "<Leader>bh", require("mini.bufremove").unshow, { desc = "Hide buffer" })
+vim.keymap.set("n", "<Leader>bo", ":only<CR>", { desc = "Keep only the current buffer" })
+vim.keymap.set("n", "<Leader>bw", require("mini.bufremove").wipeout, { desc = "Wipeout buffer" })
 vim.keymap.set("n", "<Leader>c", require("mini.bufremove").delete, { desc = "Close the current buffer" })
 vim.keymap.set("n", "<Leader>e", ":Neotree toggle<CR>", { desc = "Toggle the file explorer" })
 vim.keymap.set("n", "<Leader>fC", ":Telescope commands<CR>", { desc = "Find commands" })
