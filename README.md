@@ -89,7 +89,6 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>C</kbd> Git commits on current buffer
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>D</kbd> Git diff all files
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>P</kbd> Git push
- - <kbd>space</kbd> <kbd>g</kbd> <kbd>b</kbd> Git blame
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>c</kbd> Git commit
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>d</kbd> Git diff current buffer
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>g</kbd> Open lazygit
