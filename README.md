@@ -65,13 +65,13 @@ The leader key is <kbd>space</kbd>
 
  - <kbd>K</kbd> Show hover information
  - <kbd>[</kbd> <kbd>b</kbd> Previous buffer
- - <kbd>\</kbd> Split the window horizontally
  - <kbd>]</kbd> <kbd>b</kbd> Next buffer
  - <kbd>ctrl</kbd>+<kbd>q</kbd> Force quit
  - <kbd>ctrl</kbd>+<kbd>s</kbd> Force save
  - <kbd>g</kbd> <kbd>D</kbd> Go to type declaration
  - <kbd>g</kbd> <kbd>I</kbd> Go to implementation
  - <kbd>g</kbd> <kbd>y</kbd> Go to type definition
+ - <kbd>space</kbd> <kbd>\</kbd> Split the window horizontally
  - <kbd>space</kbd> <kbd>b</kbd> <kbd>b</kbd> Show buffers
  - <kbd>space</kbd> <kbd>b</kbd> <kbd>h</kbd> Hide other buffers
  - <kbd>space</kbd> <kbd>c</kbd> Close the current buffer
@@ -95,6 +95,7 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>h</kbd> Preview git hunk
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>p</kbd> Git pull
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>s</kbd> Git status
+ - <kbd>space</kbd> <kbd>g</kbd> <kbd>a</kbd> Git add current buffer
  - <kbd>space</kbd> <kbd>g</kbd> <kbd>t</kbd> Open tig
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>D</kbd> Document diagnostics
  - <kbd>space</kbd> <kbd>l</kbd> <kbd>R</kbd> Show references
@@ -110,8 +111,10 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>u</kbd> Update plugins
  - <kbd>space</kbd> <kbd>p</kbd> <kbd>x</kbd> Clean plugins
  - <kbd>space</kbd> <kbd>q</kbd> Quit
+ - <kbd>space</kbd> <kbd>s</kbd> <kbd>s</kbd> Select colorscheme
+ - <kbd>space</kbd> <kbd>s</kbd> <kbd>s</kbd> Write curent colorscheme as nuvim
  - <kbd>space</kbd> <kbd>u</kbd> <kbd>e</kbd> Open the user configuration file
  - <kbd>space</kbd> <kbd>u</kbd> <kbd>o</kbd> Source the user configuration file
  - <kbd>space</kbd> <kbd>w</kbd> Write the current buffer (save)
  - <kbd>space</kbd> <kbd>z</kbd> Open the terminal
- - <kbd>|</kbd> Split the window vertically
+ - <kbd>space</kbd> <kbd>|</kbd> Split the window vertically
