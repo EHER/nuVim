@@ -110,6 +110,7 @@ vim.keymap.set("n", "<Leader>gg", ":FloatermNew lazygit<CR>", { desc = "Open laz
 vim.keymap.set("n", "<Leader>gh", require("mini.diff").toggle_overlay, { desc = "Preview git hunk" })
 vim.keymap.set("n", "<Leader>gp", ":Git pull<CR>", { desc = "Git pull" })
 vim.keymap.set("n", "<Leader>gs", ":Telescope git_status<CR>", { desc = "Git status" })
+vim.keymap.set("n", "<Leader>ga", ":Git add %<CR>", { desc = "Git add curent buffer" })
 vim.keymap.set("n", "<Leader>gt", ":FloatermNew tig<CR>", { desc = "Open tig" })
 vim.keymap.set("n", "<Leader>lD", ":Pick diagnostic<CR>", { desc = "Document diagnostics" })
 vim.keymap.set("n", "<Leader>lR", vim.lsp.buf.references, { desc = "Show references" })
