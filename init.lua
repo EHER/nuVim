@@ -42,6 +42,7 @@ require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "eslint", "php
 require("mini.ai").setup()
 require("mini.basics").setup()
 require("mini.bufremove").setup()
+require("mini.colors").setup()
 require("mini.comment").setup()
 require("mini.diff").setup()
 require("mini.extra").setup()
@@ -124,6 +125,8 @@ vim.keymap.set("n", "<Leader>pm", ":Mason<CR>", { desc = "Manage Mason plugins" 
 vim.keymap.set("n", "<Leader>pu", require("mini.deps").update, { desc = "Update plugins" })
 vim.keymap.set("n", "<Leader>px", require("mini.deps").clean, { desc = "Clean plugins" })
 vim.keymap.set("n", "<Leader>q", ":quit<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<Leader>ss", ":Telescope colorscheme<CR>", { desc = "Select colorscheme" })
+vim.keymap.set("n", "<Leader>sw", ":lua MiniColors.get_colorscheme():write({name='nuvim'})<CR>", { desc = "Write current colorscheme as nuvim" })
 vim.keymap.set("n", "<Leader>ue", ":edit $MYVIMRC<CR>", { desc = "Open the user configuration file" })
 vim.keymap.set("n", "<Leader>uo", ":source $MYVIMRC<CR>", { desc = "Source the user configuration file" })
 vim.keymap.set("n", "<Leader>w", ":write<CR>", { desc = "Write the current buffer (save)" })
@@ -145,4 +148,4 @@ vim.keymap.set("n", "gy", vim.lsp.buf.definition, { desc = "Go to type definitio
 vim.keymap.set({ "n", "v" }, "<Leader>la", vim.lsp.buf.code_action, { desc = "Code actions" })
 
 vim.cmd("autocmd FileType php setlocal commentstring=//\\ %s expandtab shiftwidth=4 tabstop=4")
-vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("nuvim")
