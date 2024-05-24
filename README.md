@@ -75,7 +75,7 @@ The leader key is <kbd>space</kbd>
  - <kbd>space</kbd> <kbd>b</kbd> <kbd>b</kbd> Show buffers
  - <kbd>space</kbd> <kbd>b</kbd> <kbd>h</kbd> Hide other buffers
  - <kbd>space</kbd> <kbd>c</kbd> Close the current buffer
- - <kbd>space</kbd> <kbd>e</kbd> Toggle the file explorer
+ - <kbd>space</kbd> <kbd>e</kbd> Open file explorer
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>C</kbd> Find commands
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>H</kbd> Find help
  - <kbd>space</kbd> <kbd>f</kbd> <kbd>c</kbd> Find word under the cursor
