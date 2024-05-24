@@ -31,6 +31,7 @@ require("mini.deps").add("williamboman/mason-lspconfig.nvim")
 require("mini.deps").add("williamboman/mason.nvim")
 require("mini.deps").add("zbirenbaum/copilot-cmp")
 require("mini.deps").add("zbirenbaum/copilot.lua")
+require("mini.deps").add("nvim-tree/nvim-web-devicons")
 require("mini.deps").setup({ path = { package = path_package } })
 
 require("copilot").setup({ suggestion = { enabled = false }, panel = { enabled = false } })
