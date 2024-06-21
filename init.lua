@@ -149,7 +149,7 @@ vim.keymap.set("n", "]h", ":lua MiniDiff.goto_hunk('next')<CR>", { desc = "Next 
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to type declaration" })
 vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 vim.keymap.set("n", "gy", vim.lsp.buf.definition, { desc = "Go to type definition" })
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Go to normal mode on Terminal" })
+vim.keymap.set("t", "<C-Space>", "<C-\\><C-n>", { desc = "Go to normal mode on Terminal" })
 vim.keymap.set({"t", "n"}, "<C-z>", "<C-\\><C-n>:FloatermToggle<CR>", { desc = "Toggle Terminal" })
 vim.keymap.set({ "n", "v" }, "<Leader>la", vim.lsp.buf.code_action, { desc = "Code actions" })
 
